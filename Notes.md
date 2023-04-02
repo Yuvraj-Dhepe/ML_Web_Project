@@ -8,3 +8,6 @@
     - Creation of src for building of the ML as a package. [25.10] entire project development happens in src folder and it's building, likewise we have every folder that will act as a package.
 
 - Created the src folder and built the package, by using requirements.txt
+
+### T2: Project Structure, Logging and Exception Handling
+- Creating the entire project structure, do logging, doing exception handling.  
