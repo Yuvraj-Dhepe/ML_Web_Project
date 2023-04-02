@@ -2,7 +2,6 @@
 # For example, whenever there is an exception, we can log the exception info in a file via use of logger.
 
 # Read logger documentation at https://docs.python.org/3/library/logging.html
-
 import logging
 import os
 from datetime import datetime

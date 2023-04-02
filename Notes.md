@@ -11,3 +11,10 @@
 
 ### T2: Project Structure, Logging and Exception Handling
 - Creating the entire project structure, do logging, doing exception handling.  
+
+### T3: Project Problem Statement, EDA and Model Training
+- Use jupyter notebook to do EDA and observe.
+- Use these observations to be put into the .py files and providing to the stakeholder
+- There has to be a reason for every bit that you do in the project.
+- Feature engineering is nothing but the process of creating new features from the existing features.
+- Feature selection is nothing but the process of selecting the best features from the existing features.

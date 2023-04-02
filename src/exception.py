@@ -3,7 +3,8 @@
 import sys
 # Sys module in python provides various functions and variables that are used to manipulate different parts of the python runtime environment. It allows operating on the python interpreter as it provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter.
 # Read more about sys module here: https://docs.python.org/3/library/sys.html
-import logging
+from src.logger import logging
+
 
 def error_message_detail(error,error_detail:sys):
     _,_,exec_tb = error_detail.exc_info()
