@@ -13,6 +13,7 @@ import pandas as pd
 
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
+from src.components.data_transformation import DataTransformation, DataTransformationConfig
 
 @dataclass
 class DataIngestionConfig:
@@ -27,14 +28,14 @@ class DataIngestion:
     '''
     Used for ingesting data by making use of the configuration defined in DataIngestionConfig.
     '''
-    def __init__(self,ingestion_config: DataIngestionConfig):
+    def __init__(self,ingestion_config: DataIngestionConfig = DataIngestionConfig()):
         self.ingestion_config = ingestion_config
     
     def initiate_data_ingestion(self):
         try:
             # Reading data here.
             logging.info("Initiating data ingestion")
-            data = pd.read_csv('data/StudentsPerformance.csv')
+            data = pd.read_csv('data/NewSPerformance.csv')
                         
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
             data.to_csv(self.ingestion_config.train_data_path,index=False,header=True)
@@ -57,6 +58,8 @@ class DataIngestion:
     
 
 if __name__ == '__main__':
-    di_config = DataIngestionConfig()
-    obj = DataIngestion(di_config)
-    obj.initiate_data_ingestion()
+    obj = DataIngestion()
+    train_data, test_data = obj.initiate_data_ingestion()
+    
+    data_transformation = DataTransformation()
+    data_transformation.initiate_data_transformation(train_data,test_data)
