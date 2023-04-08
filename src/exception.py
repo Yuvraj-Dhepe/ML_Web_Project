@@ -1,6 +1,7 @@
 # We use this custom exception handling in the project to handle all the errors that will come into the project, simply we can say that we are handling all the errors that will come into the project in a single place.
 
 import sys
+
 # Sys module in python provides various functions and variables that are used to manipulate different parts of the python runtime environment. It allows operating on the python interpreter as it provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter.
 # Read more about sys module here: https://docs.python.org/3/library/sys.html
 from src.logger import logging

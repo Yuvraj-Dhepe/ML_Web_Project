@@ -1,20 +1,20 @@
 # Doing all the ETL steps in this file.
 # Doing all types of data transformation like feature engineering, feature selection, feature scaling, data cleaning, handling null values etc.
 
+import os
+import sys
+from dataclasses import dataclass
+
 import numpy as np
 import pandas as pd
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
-from src.logger import logging
-from src.exception import CustomException
-import pandas as pd
-import sys
-import os
-from dataclasses import dataclass
-from src.utils import save_object
 
+from src.exception import CustomException
+from src.logger import logging
+from src.utils import save_object
 
 # Defining the paths for the data ingestion
 # di_obj = DataIngestion.DataIngestionConfig() # Not required as we already are doing the Doing the addition of paths in data_ingestion.py itself.
@@ -23,24 +23,29 @@ from src.utils import save_object
 
 @dataclass #This is a decorator which is used to create a dataclass variables.
 class DataTransformationConfig:
+    '''
+    We are creating a dataclass variable which will be used to store the paths for the data transformation transformer object.
+    '''
     preprocessor_obj_file_path = os.path.join("artifacts","preprocessor.pkl")
 
 class DataTransformation:
     
     def __init__(self,transformation_config: DataTransformationConfig = DataTransformationConfig()):
-        self.data_transformation_config = DataTransformationConfig()
+        self.data_transformation_config = transformation_config
 
     def get_data_transformer_object(self):
         '''
-        This function is responsible for data transformation
+        This function is responsible for creating a preprocessing data transformation object.
         '''
         try:
             numerical_columns = ["writing_score","reading_score"]
-            categorical_columns = ["gender",
-                                   "race_ethnicity",
-                                   "parental_level_of_education",
-                                   "lunch",
-                                   "test_preparation_course"]
+            categorical_columns = [
+                "gender",
+                "race_ethnicity",
+                "parental_level_of_education",
+                "lunch",
+                "test_preparation_course"
+                ]
             
             num_pipeline = Pipeline(
                 steps=[
@@ -72,6 +77,9 @@ class DataTransformation:
             raise CustomException(e,sys)
         
     def initiate_data_transformation(self,train_path,test_path):
+        '''
+        Here we use the preprocessing object to transform the data.
+        '''
             
         try:
             train_df = pd.read_csv(train_path)
@@ -79,8 +87,8 @@ class DataTransformation:
             
             
             logging.info("Read train and test data completed") 
-            logging.info("Obtaining preprocessing object")
             
+            logging.info("Obtaining preprocessing object and starting processing.")
             preprocessing_obj = self.get_data_transformer_object()
             target_column_name = "math_score"
             numerical_columns = ["writing_score","reading_score"]
@@ -102,8 +110,7 @@ class DataTransformation:
                 input_feature_test_arr,np.array(target_feature_test_df)
                 ]
             
-            logging.info(f"Saved Preprocessing object.")
-            # Saving the pkl file
+            logging.info(f"Saved Preprocessing object at a particular filepath ")
             save_object(
                 file_path = self.data_transformation_config.preprocessor_obj_file_path,
                 obj = preprocessing_obj

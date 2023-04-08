@@ -6,4 +6,5 @@ scikit-learn
 catboost
 xgboost
 dill
+tensorboard
 #-e . # To trigger the setup.py. Use it at the end of the package completion.
