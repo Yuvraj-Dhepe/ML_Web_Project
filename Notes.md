@@ -18,3 +18,8 @@
 - There has to be a reason for every bit that you do in the project.
 - Feature engineering is nothing but the process of creating new features from the existing features.
 - Feature selection is nothing but the process of selecting the best features from the existing features.
+
+
+### T9: Project deployment in AWS cloud using CICD pipelines
+- Having Elastic Beanstalk, is a kind of an instance that will be provided where one can deploy entire application.
+- 2 very important configurations that needs to be setup when we are working with elastic beanstalk are .ebextensions and setting up application.py
