@@ -34,11 +34,15 @@ class DataIngestion:
     def __init__(self,ingestion_config: DataIngestionConfig = DataIngestionConfig()):
         self.ingestion_config = ingestion_config
     
-    def initiate_data_ingestion(self):
+    def initiate_data_ingestion(self,raw_data_path: str = None):
         try:
             # Reading data here.
             logging.info("Initiating data ingestion")
-            data = pd.read_csv('data/NewSPerformance.csv')
+            if raw_data_path is not None:
+                self.ingestion_config.raw_data_path = raw_data_path
+                data = pd.read_csv(self.ingestion_config.raw_data_path)
+            else:
+                data = pd.read_csv('data/NewSPerformance.csv')
                         
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
             data.to_csv(self.ingestion_config.train_data_path,index=False,header=True)

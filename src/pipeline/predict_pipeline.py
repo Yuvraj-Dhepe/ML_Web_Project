@@ -3,6 +3,7 @@ import sys
 import pandas as pd
 from src.exception import CustomException
 from src.utils import load_object
+from src.logger import logging
 
 
 class PredictPipeline:
@@ -11,6 +12,7 @@ class PredictPipeline:
     
     def predict(self,features):
         try:
+            logging.info("Predicting the data")
             model_path  = "artifacts/model.pkl"
             preprocessor_path = "artifacts/preprocessor.pkl"
             
@@ -19,6 +21,7 @@ class PredictPipeline:
         
             data_scaled = preprocessor.transform(features)
             predictions = model.predict(data_scaled)
+            logging.info("Predictions completed")
             return pd.DataFrame(predictions,columns=["predictions"])
         
         except Exception as e:
@@ -51,6 +54,7 @@ class CustomData:
 
     def get_data_as_data_frame(self):
         try:
+            logging.info("Creating a data frame from the custom data")
             custom_data_input_dict = {
                 "gender": [self.gender],
                 "race_ethnicity": [self.race_ethnicity],
@@ -60,7 +64,7 @@ class CustomData:
                 "reading_score": [self.reading_score],
                 "writing_score": [self.writing_score],
             }
-
+            logging.info("Data frame created")
             return pd.DataFrame(custom_data_input_dict)
 
         except Exception as e:
