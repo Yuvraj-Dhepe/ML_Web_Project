@@ -1,6 +1,3 @@
-# Doing all the ETL steps in this file.
-# Doing all types of data transformation like feature engineering, feature selection, feature scaling, data cleaning, handling null values etc.
-
 import os
 import sys
 from dataclasses import dataclass

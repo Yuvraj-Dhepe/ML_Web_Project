@@ -7,5 +7,6 @@ catboost
 xgboost
 dill
 tensorboard
+dataclasses
 Flask
-#-e . # To trigger the setup.py. Use it at the end of the package completion.
+-e . # To trigger the setup.py. Use it at the end of the package completion.
