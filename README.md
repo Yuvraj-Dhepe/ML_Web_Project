@@ -153,9 +153,9 @@ pip install -r requirements.txt
     - Dataset Link: [Students Performance Dataset](https://www.kaggle.com/spscientist/students-performance-in-exams)
 - Data Collection & Preprocessing
     - We will use jupyter notebooks, to majority of the EDA, and finding the patterns. 
-        - [Link to EDA Ipynb File](https://drive.google.com/file/d/1fTR9FDHklJu9iIcg04tCZ7ofImfxu6SO/view?usp=share_link)
+        - [Link to EDA Ipynb File](./EDA_Student_performance.ipynb)
     - Once the EDA is done, we will also have basic models run on the data, in another jupyter notebook, so that we have basic model pipeline code in place as well.
-        - [Link to Models Ipynb File](https://drive.google.com/file/d/1HxHrjj3Q9zV3r0N9NpqyzlW73cdxEaEO/view?usp=share_link)
+        - [Link to Models Ipynb File](./2_MODEL_TRAINING.ipynb)
 
 #### Action A3
 - Design and Development of ML pipeline components in form of modular codes
