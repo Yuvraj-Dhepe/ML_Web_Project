@@ -23,3 +23,30 @@
 ### T9: Project deployment in AWS cloud using CICD pipelines
 - Having Elastic Beanstalk, is a kind of an instance that will be provided where one can deploy entire application.
 - 2 very important configurations that needs to be setup when we are working with elastic beanstalk are .ebextensions and setting up application.py
+
+### T11: Deploying the project using AWS
+- Setup Docker container:
+    - Build an image via use of DockerFile
+    - Run the image in a container by docker run -p 8080:80 <image-name>
+    - Here for example, if you have an existing container named my-app that is listening on port 80, and you want to expose it on port 8080.
+    - This will link the container to port 8080 on the host machine, so you can access it by visiting http://localhost:8080 in your web browser.
+- Setup Github workflow
+- Setup AWS IAM role
+    - Create a new user and attach the below permissions to the user.
+    - Provide the AmazonEC2ContainerRegistryFullAccess & AmazonEC2FullAccess permissions
+    - Setup access keys for the user
+- Go to Elastic Container Registry and create a new repository named student performance and copy the URL for the repository to the aws yml file.
+- Go to EC2 and setup a new instance.
+    - Run the instance with default settings, just set all the HTTP connections.
+    - Once the instance is up and running, go to the instance and copy the public IP address.
+    - Go to the terminal of instance to install docker.
+        - sudo apt-get update -y
+        - sudo apt-get upgrade
+        - curl -fsSL https://get.docker.com -o get-docker.sh
+        - sudo sh get-docker.sh
+        - sudo usermod -aG docker ubuntu
+        - newgrp docker
+        
+
+
+    
