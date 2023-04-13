@@ -45,7 +45,11 @@ def predict_datapoint():
             return render_template('home.html',results = e)
 
 if __name__=='__main__':
-    app.run(host = '0.0.0.0',port = 8080) #this is the port number on which the application will run, so in docker run command we will map this port to the port of the container, ex. -p 8080:80 where 8080 is the port of the host and 80 is the port of the container
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host='0.0.0.0', port=port) # This is the port assigned by the beanstalk, if any... else we use the 8080 port
+    
+    #app.run(host = '0.0.0.0',port = 8080) #this is the port number on which the application will run, so in docker run command we will map this port to the port of the container, ex. -p 8080:80 where 8080 is the port of the host and 80 is the port of the container
 
 
 # Now the code has been finished, we have setup the ec2 instance, ecr repo, action-runners and setup the ec2 instance to recieve the action as soon as we commit the code and this will trigger our CI cd pipeline.
+# No
