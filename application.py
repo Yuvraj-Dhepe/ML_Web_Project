@@ -45,4 +45,4 @@ def predict_datapoint():
             return render_template('home.html',results = e)
 
 if __name__=='__main__':
-    app.run(host = '0.0.0.0',port = 8080)
+    app.run(host = '0.0.0.0',port = 8080) #this is the port number on which the application will run, so in docker run command we will map this port to the port of the container, ex. -p 8080:80 where 8080 is the port of the host and 80 is the port of the container

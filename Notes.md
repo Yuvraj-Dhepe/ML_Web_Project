@@ -56,11 +56,12 @@
         - newgrp docker
 
         Our main aim is that once we update our code, from github, our docker image should go to the ecr repository, and then this docker image will get installed in the ec2 instance, that we have created.
+
 - Now setup runner in github, to run the workflow. This runner will trigger the workflow, whenever there is a change in the code.
     - Simply create a self-hosted runner in github runner
     - Go to the instance and run all the commands to setup the runner, as per github, the name is given as self-hosted. 
     - For the default options where it asks for anything simply leave it blank.
-
+    - If the runner goes offline, then simply go to the instance and run the command ./run.sh from the action-runner folder.
 - After this add the github secrets in actions with the following keys:
     - AWS_ACCESS_KEY_ID: Created when we created the user in IAM
     - AWS_SECRET_ACCESS_KEY: Created when we created the user in IAM
