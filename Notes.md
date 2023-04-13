@@ -54,6 +54,8 @@
         - sudo sh get-docker.sh
         - sudo usermod -aG docker ubuntu
         - newgrp docker
+    - sudo apt-get update -y && sudo apt-get upgrade -y && curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh && sudo usermod -aG docker ubuntu && newgrp docker
+
 
         Our main aim is that once we update our code, from github, our docker image should go to the ecr repository, and then this docker image will get installed in the ec2 instance, that we have created.
 
