@@ -23,7 +23,6 @@
 # 4. Store an IAM user access key in GitHub Actions secrets named `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.
 #    See the documentation for each action used below for the recommended IAM policies for this IAM user,
 #    and best practices on handling the access key credentials.
-
 name: workflow
 
 on:
@@ -38,9 +37,9 @@ permissions:
   contents: read
 
 jobs:
-  integration:
+  integration: # This job will be run on the github hosted runner
     name: Continuous Integration
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -51,7 +50,7 @@ jobs:
       - name: Run unit tests
         run: echo "Running unit tests"
 
-  build-and-push-ecr-image:
+  build-and-push-ecr-image: # This will be run on the aws machine.
     name: Continuous Delivery
     needs: integration
     runs-on: ubuntu-latest
@@ -89,7 +88,7 @@ jobs:
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
           
           
-  Continuous-Deployment:
+  Continuous-Deployment: # This will be run on the aws machine.
     needs: build-and-push-ecr-image
     runs-on: self-hosted
     steps:
