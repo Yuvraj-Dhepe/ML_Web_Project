@@ -42,7 +42,7 @@ class DataIngestion:
                 self.ingestion_config.raw_data_path = raw_data_path
                 data = pd.read_csv(self.ingestion_config.raw_data_path)
             else:
-                data = pd.read_csv('data/NewSPerformance.csv')
+                data = pd.read_csv('./assets/data/NewSPerformance.csv')
                         
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
             data.to_csv(self.ingestion_config.train_data_path,index=False,header=True)
