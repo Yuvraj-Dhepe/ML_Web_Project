@@ -17,7 +17,7 @@
     - Deciding on the [dataset](#action-a1-and-a2)
     - Setup of the [environment](#task-t2)
     - Design and [Develop Components and Pipelines](#action-a3), where components interact with data in backend, whereas the pipelines interact with the user and components to get predictions from a trained ML model and finally provide result to the user.
-- Anyone, can simply follow the actions mentioned below to make their own copy of this end to end project. For simple viewing, I will soon host this project via Gradio, cause having an AWS hosted server is not easy on the pocket 🙃. --> [Hosted Gradio App](#gradio-web-app-for-this-project)
+- Anyone, can simply follow the actions mentioned below to make their own copy of this end to end project. For simple viewing, I will soon host this project via Gradio, cause having an AWS hosted server is not easy on the pocket 🙃. --> [Hosted Gradio App](https://yuvidhepe-studentperformance.hf.space)
 
 ## STAR ANALYSIS
 - Situation: To gain experience in end-to-end machine learning project development and deployment
