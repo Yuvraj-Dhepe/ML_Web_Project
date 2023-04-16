@@ -60,15 +60,15 @@ class ModelTrainer:
                 },
                 "Decision Tree": {
                     'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
-                    #'splitter':['best','random'],
+                    'splitter':['best','random'],
                     #'max_features':['sqrt','log2'],
                     #"max_depth": [None, 5, 10],
                     #"min_samples_split": [2, 5, 10],
                     
                 },
                 "Random Forest":{
-                    #'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
-                    # 'max_features':['sqrt','log2',None],
+                    'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
+                     #'max_features':['sqrt','log2',None],
                     'n_estimators': [8,16,32,64,128,256],
                     #"max_depth": [None, 5, 10],
                     #"min_samples_split": [2, 5, 10],
