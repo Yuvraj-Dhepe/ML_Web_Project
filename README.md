@@ -72,6 +72,8 @@ R-squared (R^2) is a commonly used metric to evaluate regression models. It repr
 - We can do feature-engineering, like adding up scores of different subjects, taking average of the scores etc
 - Hosting a App for real-time use 
 
+## [![Gradio Web-APP For This Project]("./assets/images/gradio.png")](https://yuvidhepe-studentperformance.hf.space)
+
 
 **With Basic Overview out of the way, let's dive in the STAR details of the project**
 --
