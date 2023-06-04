@@ -86,7 +86,7 @@
 ```
 
 ## Motivation and a brief of the project
-- These days it's getting more common for a person in data team, to wear multiple hats in terms of bringing insights from the sea of data. To gain experience on what it means to multiple hats, I created this end to to end project on a simple data set of [Students Performance Dataset](https://www.kaggle.com/spscientist/students-performance-in-exams) from Kaggle.
+- These days it's getting more common for a person in data team, to wear multiple hats in terms of bringing insights from the sea of data. To gain experience on what it means to wear multiple hats, I created this end to to end project on a simple data set of [Students Performance Dataset](https://www.kaggle.com/spscientist/students-performance-in-exams) from Kaggle.
 - The goal of this project is not to derive any magical insights from data, rather, to do a comprehensive work on building an end to end project which includes but is not limited to:
     - Creating [modular folder structure](#t11-folder-structure-creation)
     - Deciding on the [dataset](#action-a1-and-a2)
@@ -145,12 +145,12 @@ R-squared (R^2) is a commonly used metric to evaluate regression models. It repr
 ## What can be improved
 - We can use hyperparameter tuning with more iterations
 - We can do feature-engineering, like adding up scores of different subjects, taking average of the scores etc
-- Hosting a App for real-time use 
+- Hosting a App for real-time use on AWS
 
 ### [Gradio Web-APP For This Project](https://yuvidhepe-studentperformance.hf.space) <img src="./assets/images/gradio.png" alt="Gradio Web-App" width="30" height="30">
 
 
-**With Basic Overview out of the way, let's dive in the STAR details of the project**
+**If you find the project interesting and want to experience end to end ML Project work, let's dive in the STAR details of the project and build it from scratch**
 --
 
 ## Situation 
