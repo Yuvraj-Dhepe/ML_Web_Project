@@ -10,6 +10,81 @@
 
 # End to End ML Project
 
+## Project Organization
+```
+.
+├── Blog_Code.ipynb                                     : Environment Files
+├── Blog_Code.ipynb                                     : Project Summary for Blogging
+├── Dockerfile                                          : Docker File to Create Docker Env.
+├── Notes.md                                            : Notes made while creating the project
+├── README.md                                           : Project Report
+├── application.py                                      : Flask App File
+├── artifacts                                           : Folder Used To Store important files for processing
+│   ├── model.pkl
+│   ├── preprocessor.pkl
+│   ├── test.csv
+│   └── train.csv
+├── assets                                              : Consists of All files created while exploring data and do model training in jupyter nb's
+│   ├── data
+│   │   ├── NewSPerformance.csv
+│   │   ├── StudentsPerformance.csv
+│   │   └── UpdatedStudentPerformance.csv
+│   ├── files
+│   │   ├── model_report.csv
+│   │   └── notebook
+│   │       ├── 2_MODEL_TRAINING.ipynb
+│   │       ├── EDA_Student_performance.ipynb
+│   │       ├── NewSPerformance.csv
+│   │       └── catboost_info
+│   │           ├── catboost_training.json
+│   │           ├── learn
+│   │           │   └── events.out.tfevents
+│   │           ├── learn_error.tsv
+│   │           └── time_left.tsv
+│   └── images
+│       ├── Actual vs Predicted.png
+│       ├── Actual vs Predicted_regplot.png
+│       ├── Multivariate_Analysis_Of_Scores.png
+│       ├── Parental_Education_Effect_On_Student_Performance_Plot.png
+│       ├── Prep_Course_Plot.png
+│       ├── Smarter_Females_Plot.png
+│       ├── Socioeconomic_Status_Effect_On_Student_Performance_Plot.png
+│       ├── Type_of_Lunch_Effect_On_Student_Performance_Plot.png
+│       └── gradio.png
+├── catboost_info/                                      : Catboost Model files
+├── logs                                                : Logs created for warnings n errors in project implementation
+│   └── 2023-05-01-08-42-06.log
+│       └── 2023-05-01-08-42-06.log
+├── mlproject.egg-info/                                 : Folder created when whole project is run as a module
+├── requirements.txt                                    : Library requirements of the project
+├── setup.py                                            : Installs & Setting up of Project      
+├── src                                                 : Consists of All Data Components & Pipelines to implement this end to end project        
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-38.pyc
+│   │   ├── exception.cpython-38.pyc
+│   │   ├── logger.cpython-38.pyc
+│   │   └── utils.cpython-38.pyc
+│   ├── components
+│   │   ├── __init__.py
+│   │   ├── data_ingestion.py
+│   │   ├── data_transformation.py
+│   │   └── model_trainer.py
+│   ├── exception.py
+│   ├── logger.py
+│   ├── pipeline
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-38.pyc
+│   │   │   └── predict_pipeline.cpython-38.pyc
+│   │   ├── predict_pipeline.py
+│   │   └── train_pipeline.py
+│   └── utils.py
+└── templates                                           : Templates for Flask App
+    ├── home.html
+    └── index.html
+```
+
 ## Motivation and a brief of the project
 - These days it's getting more common for a person in data team, to wear multiple hats in terms of bringing insights from the sea of data. To gain experience on what it means to multiple hats, I created this end to to end project on a simple data set of [Students Performance Dataset](https://www.kaggle.com/spscientist/students-performance-in-exams) from Kaggle.
 - The goal of this project is not to derive any magical insights from data, rather, to do a comprehensive work on building an end to end project which includes but is not limited to:
